@@ -3,16 +3,32 @@ import path from 'path'
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 
+// Ce plugin permet à GitHub Actions de compiler le site même sans les images Figma
+const figmaAssetPlugin = () => {
+  return {
+    name: 'figma-asset-mock',
+    resolveId(id: string) {
+      if (id.startsWith('figma:asset/')) {
+        return id;
+      }
+    },
+    load(id: string) {
+      if (id.startsWith('figma:asset/')) {
+        // Retourne une image grise de remplacement (placeholder) pour que le site s'affiche
+        return `export default "https://placehold.co/600x400/eeeeee/999999?text=Image+Figma"`;
+      }
+    }
+  }
+}
+
 export default defineConfig({
   plugins: [
-    // The React and Tailwind plugins are both required for Make, even if
-    // Tailwind is not being actively used – do not remove them
     react(),
     tailwindcss(),
+    figmaAssetPlugin(), // On ajoute le plugin ici
   ],
   resolve: {
     alias: {
-      // Alias @ to the src directory
       '@': path.resolve(__dirname, './src'),
     },
   },
