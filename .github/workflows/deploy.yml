@@ -24,7 +24,7 @@ jobs:
         uses: actions/checkout@v4
         
       - name: Install pnpm
-        uses: pnpm/action-setup@v3
+        uses: pnpm/action-setup@v4
         with:
           version: 9
           
@@ -32,7 +32,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: 'pnpm'
+          # C'est ici que j'ai retiré la ligne qui causait l'erreur !
           
       - name: Install dependencies
         run: pnpm install
