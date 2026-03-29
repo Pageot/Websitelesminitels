@@ -7,13 +7,14 @@ import react from '@vitejs/plugin-react'
 const figmaAssetPlugin = () => {
   return {
     name: 'figma-asset-mock',
+    enforce: 'pre' as const,
     resolveId(id: string) {
       if (id.startsWith('figma:asset/')) {
-        return id;
+        return '\0' + id;
       }
     },
     load(id: string) {
-      if (id.startsWith('figma:asset/')) {
+      if (id.startsWith('\0figma:asset/')) {
         // Retourne une image grise de remplacement (placeholder) pour que le site s'affiche
         return `export default "https://placehold.co/600x400/eeeeee/999999?text=Image+Figma"`;
       }

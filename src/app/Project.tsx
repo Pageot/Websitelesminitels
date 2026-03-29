@@ -2,16 +2,18 @@ import React, { useEffect } from "react";
 import { useParams, Link } from "react-router";
 import { Navbar } from "./components/Navbar";
 
-import imgConvertShowreel11 from "figma:asset/90ced5775e3caed51cb3cb67bd7f5885e9655f5a.png";
-import imgConvertShowreel21 from "figma:asset/60fac3eed5e8d37d129d6095645ff337de29da8c.png";
-import imgConvertShowreel31 from "figma:asset/def09b034b76d27e3c5081dec875e4f9cf6f6674.png";
-import imgConvertShowreel41 from "figma:asset/b0d64a830e76fe8aacab280c6c04eb419f1294a4.png";
-import imgConvertShowreel51 from "figma:asset/52a22acb2fca7b0c9170d9271d57753ac8025e77.png";
-import imgConvertShowreel61 from "figma:asset/ad81864c82d8bbbc781278a603f87a89589c8cc1.png";
-import imgIconAppConvert1 from "figma:asset/8c3f6dacd2fdbf01fa82a046d25570c7312d267f.png";
-import rawSvgPhoneMockup from "../imports/Main_screen_-_Online_-_Light.svg?raw";
-import rawAppStoreBadge from "../imports/Download_on_the_App_Store_Badge.svg?raw";
-import rawGooglePlayBadge from "../imports/Get_it_on_Google_play.svg?raw";
+const imgConvertShowreel11 = "https://raw.githubusercontent.com/Pageot/WebsiteLesMinitels-assets/refs/heads/main/Convert_Showreel-1.jpg";
+const imgConvertShowreel21 = "https://raw.githubusercontent.com/Pageot/WebsiteLesMinitels-assets/refs/heads/main/Convert_Showreel-2.jpg";
+const imgConvertShowreel31 = "https://raw.githubusercontent.com/Pageot/WebsiteLesMinitels-assets/refs/heads/main/Convert_Showreel-3.jpg";
+const imgConvertShowreel41 = "https://raw.githubusercontent.com/Pageot/WebsiteLesMinitels-assets/refs/heads/main/Convert_Showreel-4.jpg";
+const imgConvertShowreel51 = "https://raw.githubusercontent.com/Pageot/WebsiteLesMinitels-assets/refs/heads/main/Convert_Showreel-5.jpg";
+const imgConvertShowreel61 = "https://raw.githubusercontent.com/Pageot/WebsiteLesMinitels-assets/refs/heads/main/Convert_Showreel-6.jpg";
+const imgIconAppConvert1 = "https://raw.githubusercontent.com/Pageot/WebsiteLesMinitels-assets/refs/heads/main/Icon%20app%20Convert.png";
+
+const rawSvgPhoneMockup = "https://raw.githubusercontent.com/Pageot/WebsiteLesMinitels-assets/22c29a6c35142586d513e5b8dba80468b88a0c4e/Main%20screen%20-%20Online%20-%20Light.svg";
+const rawAppStoreBadge = "https://raw.githubusercontent.com/Pageot/WebsiteLesMinitels-assets/22c29a6c35142586d513e5b8dba80468b88a0c4e/Download_on_the_App_Store_Badge.svg";
+const rawGooglePlayBadge = "https://raw.githubusercontent.com/Pageot/WebsiteLesMinitels-assets/22c29a6c35142586d513e5b8dba80468b88a0c4e/Get_it_on_Google_play.svg";
+
 import { ImageGallery } from "./components/ImageGallery";
 
 import svgPaths from "../imports/svg-2vabhdf4i6";
@@ -77,15 +79,17 @@ export default function Project() {
             {/* App Store Badges */}
             <div className="flex gap-[16px] items-center shrink-0 flex-wrap mt-[8px]">
               <button 
-                className="cursor-pointer h-[40px] relative shrink-0 w-[120px] hover:opacity-80 transition-opacity [&>svg]:w-full [&>svg]:h-full [&>svg]:block"
-                dangerouslySetInnerHTML={{ __html: rawAppStoreBadge }}
+                className="cursor-pointer h-[40px] relative shrink-0 w-[120px] hover:opacity-80 transition-opacity"
                 aria-label="Download on the App Store"
-              />
+              >
+                <img src={rawAppStoreBadge} alt="Download on the App Store" className="w-full h-full block" />
+              </button>
               <button 
-                className="cursor-pointer h-[40px] relative shrink-0 w-[135px] hover:opacity-80 transition-opacity [&>svg]:w-full [&>svg]:h-full [&>svg]:block"
-                dangerouslySetInnerHTML={{ __html: rawGooglePlayBadge }}
+                className="cursor-pointer h-[40px] relative shrink-0 w-[135px] hover:opacity-80 transition-opacity"
                 aria-label="Get it on Google Play"
-              />
+              >
+                <img src={rawGooglePlayBadge} alt="Get it on Google Play" className="w-full h-full block" />
+              </button>
             </div>
             
             {/* Gallery Carousel */}
@@ -94,10 +98,9 @@ export default function Project() {
           
           {/* Right Column - Mockup */}
           <div className="aspect-[341/743] h-auto w-full max-w-[341px] pointer-events-none relative rounded-[32px] sm:rounded-[42px] shrink-0 flex justify-center items-center overflow-hidden bg-white lg:sticky lg:top-[40px]" data-name="Main screen - Online - Light 1 1">
-            <div 
-              className="absolute inset-0 max-w-none size-full flex justify-center items-center [&>svg]:w-full [&>svg]:h-full [&>svg]:object-cover" 
-              dangerouslySetInnerHTML={{ __html: rawSvgPhoneMockup }}
-            />
+            <div className="absolute inset-0 max-w-none size-full flex justify-center items-center">
+              <img src={rawSvgPhoneMockup} alt="Mockup screen" className="w-full h-full object-cover" />
+            </div>
             <div aria-hidden="true" className="absolute border-[3px] border-[#171717] border-solid inset-0 rounded-[32px] sm:rounded-[42px]" />
           </div>
           

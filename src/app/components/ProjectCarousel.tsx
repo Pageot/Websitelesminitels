@@ -1,13 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router";
 
-// Importing images from the Figma asset URLs
-import imgConvertShowreel11 from "figma:asset/90ced5775e3caed51cb3cb67bd7f5885e9655f5a.png";
-import imgConvertShowreel21 from "figma:asset/60fac3eed5e8d37d129d6095645ff337de29da8c.png";
-import imgConvertShowreel31 from "figma:asset/def09b034b76d27e3c5081dec875e4f9cf6f6674.png";
-import imgConvertShowreel41 from "figma:asset/b0d64a830e76fe8aacab280c6c04eb419f1294a4.png";
-import imgConvertShowreel51 from "figma:asset/52a22acb2fca7b0c9170d9271d57753ac8025e77.png";
-import imgConvertShowreel61 from "figma:asset/ad81864c82d8bbbc781278a603f87a89589c8cc1.png";
+const imgConvertShowreel11 = "https://raw.githubusercontent.com/Pageot/WebsiteLesMinitels-assets/refs/heads/main/Convert_Showreel-1.jpg";
+const imgConvertShowreel21 = "https://raw.githubusercontent.com/Pageot/WebsiteLesMinitels-assets/refs/heads/main/Convert_Showreel-2.jpg";
+const imgConvertShowreel31 = "https://raw.githubusercontent.com/Pageot/WebsiteLesMinitels-assets/refs/heads/main/Convert_Showreel-3.jpg";
+const imgConvertShowreel41 = "https://raw.githubusercontent.com/Pageot/WebsiteLesMinitels-assets/refs/heads/main/Convert_Showreel-4.jpg";
+const imgConvertShowreel51 = "https://raw.githubusercontent.com/Pageot/WebsiteLesMinitels-assets/refs/heads/main/Convert_Showreel-5.jpg";
+const imgConvertShowreel61 = "https://raw.githubusercontent.com/Pageot/WebsiteLesMinitels-assets/refs/heads/main/Convert_Showreel-6.jpg";
 
 const CAROUSEL_ITEMS = [
   { id: 1, image: imgConvertShowreel11, link: "/project/1" },
